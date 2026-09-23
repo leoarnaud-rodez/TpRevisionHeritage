@@ -1,6 +1,6 @@
 /*
- * Coefficient.java                                            16 sept 2026
- * IUT de Rodez, pas de copyright (ni "copyleft")
+ * Représentation d'un coefficient d'une matrice                                    09/22
+ * Coefficient.java
  */
 
 package iut.info2.matrice;
@@ -74,7 +74,8 @@ public class Coefficient {
      * @param numColonne nouveau numéro de colonne à affecter (entier)
      */
     public void setColonne(int numColonne) {
-        ligne = numColonne;
+        // correction de l'erreur : il y avait marqué ligne au lieu de colonne
+        colonne = numColonne;
     }
 
     /**

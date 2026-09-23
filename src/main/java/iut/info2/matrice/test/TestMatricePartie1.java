@@ -6,17 +6,15 @@
  *-                                                                           -
  *-                                                                           -
  * ----------------------------------------------------------------------------
- *//*
+ */
 
-
-*/
 /* Programme de test de la classe Matrice (matrice creuse)                09/22
  * TestMatricePartie1.java
- *//*
-
+ */
 package iut.info2.matrice.test;
 
-*/
+import iut.info2.matrice.Matrice;
+
 /**
  * Programme de test de la classe Matrice qui représente une matrice creuse.
  * Seules les opérations de la partie 1 du TP sont testées.
@@ -26,37 +24,28 @@ package iut.info2.matrice.test;
  *    - afficher sur l'interface console les coefficients non nuls
  * @author INFO2
  * @version 1.0
- *//*
-
+ */
 public class TestMatricePartie1 {
 
-    */
-/** Dimension de la matrice carrée utilisée pour les tests *//*
-
+    /** Dimension de la matrice carrée utilisée pour les tests */
     private static final int DIMENSION = 5;
 
 
-    */
-/** jeux de données avec les coordonnées où seront placées des valeurs
+    /** jeux de données avec les coordonnées où seront placées des valeurs
      *  non nulles dans la matrice carrée utilisée pour les tests
-     *//*
-
+     */
     private static final int[][] COORDONNEES = { {1, 2}, {3, 3}, {4, 1} };
 
-    */
-/**
+    /**
      * Jeu de données avec les valeurs des coefficients non nuls de la matrice
      * carrée utilisée pour les tests
-     *//*
-
+     */
     private static final double[] A_INSERER = { 10.5, 6, 5.3 };
 
 
-    */
-/*
+    /*
      * Test du constructeur avec argument
-     *//*
-
+     */
     public static void testConstructeur() {
 
         // jeux de données avec des dimensions incorrectes et correctes
@@ -114,13 +103,11 @@ public class TestMatricePartie1 {
     }
 
 
-    */
-/**
+    /**
      * Test de la méthode permettant d'afficher les coefficients non nuls de la
      * matrice. Simultanément, la méthode setValeur est testée sur quelques
      * situations simples.
-     *//*
-
+     */
     public static void testAfficherSetValeur() {
         Matrice aTester = null;         // matrice utilisée pour les tests
 
@@ -148,12 +135,10 @@ public class TestMatricePartie1 {
     }
 
 
-    */
-/**
+    /**
      * Test de la méthode getValeur avec une matrice nulle
      * @param aTester matrice qui sera créée par la méthode
-     *//*
-
+     */
     private static void testGetValeurMatriceNulle(Matrice aTester) {
         int nbTestOk;                   // nombre de tests réussis
         System.out.println("TEST 1 : avec une matrice nulle.\n");
@@ -179,12 +164,10 @@ public class TestMatricePartie1 {
 
 
 
-    */
-/**
+    /**
      * Test de la méthode getValeur avec une matrice non nulle
      * @param aTester  matrice sur laquelle portent les tests
-     *//*
-
+     */
     private static void testGetValeurMatriceNonNulle(Matrice aTester) {
         int nbTestOk;                   // nombre de tests réussis
         int position;                   // position d'une paire dans COORDONNEES
@@ -204,12 +187,10 @@ public class TestMatricePartie1 {
                 position = positionDansTable(COORDONNEES, l, c);
                 correct = false;
 
-                */
-/*
+                /*
                  * 2 cas sont envisagés : la valeur du coefficient en (l, c) est
                  * égale à 0 ou bien elle est différente de 0
-                 *//*
-
+                 */
                 if (valeurCourante != 0 && position != -1) {
                     if (A_INSERER[position] == valeurCourante) {
                         nbTestOk++;
@@ -234,12 +215,10 @@ public class TestMatricePartie1 {
     }
 
 
-    */
-/**
+    /**
      * Test de la méthode getValeur avec des coordonnées incorrectes
      * @param aTester  matrice sur laquelle portent les tests
-     *//*
-
+     */
     private static void testGetValeurCoordonneeIncorrecte(Matrice aTester) {
         int nbTestOk;                   // nombre de tests réussis
         double valeurCourante;          // valeur d'un coefficient de la matrice
@@ -276,32 +255,26 @@ public class TestMatricePartie1 {
 
 
 
-    */
-/**
+    /**
      * Test de la méthode getValeur
-     *//*
-
+     */
     public static void testGetValeur() {
         Matrice aTester = null;         // matrice utilisée pour les tests
 
         System.out.println("Test de l'accesseur getValeur : \n"
                 + "------------------------------\n");
 
-        */
-/*
+        /*
          *  TEST 1 : on vérifie que tous les coefficients d'une matrice nulle
          *  sont égaux à 0
-         *//*
-
+         */
         aTester = new Matrice(DIMENSION, DIMENSION);
         testGetValeurMatriceNulle(aTester);
 
-        */
-/*
+        /*
          * TEST 2 : on place dans la matrice des valeurs différentes de 0,
          * et on vérifie que tous les coefficients ont bien la valeur attendue
-         *//*
-
+         */
         testGetValeurMatriceNonNulle(aTester);
 
         // TEST 3 : on utilise des coordonnées incorrectes
@@ -310,12 +283,10 @@ public class TestMatricePartie1 {
     }
 
 
-    */
-/**
+    /**
      * Test de la méthode setValeur en utilisant des coordonnées incorrectes
      * @param aTester  matrice à tester
-     *//*
-
+     */
     private static void testSetValeurCoordonneeIncorrecte(Matrice aTester) {
 
         // jeu de données avec des coordonnées incorrectes
@@ -329,12 +300,10 @@ public class TestMatricePartie1 {
                 + "s'affiche correctement.\n");
         nbTestOk = 0;
 
-        */
-/*
+        /*
          * Pour chaque paire de coordonnées incorrectes, on appelle la méthode
          * setValeur afin de provoquer la levée de l'exception.
-         *//*
-
+         */
         for (int i = 0; i < coordIncorrecte.length; i++) {
             try {
                 System.out.println("Modification de la valeur située en "
@@ -356,12 +325,10 @@ public class TestMatricePartie1 {
                 + coordIncorrecte.length +  " tests.\n");
     }
 
-    */
-/**
+    /**
      * Test de la méthode setValeur en utilisant des coordonnées correctes
      * @param aTester  matrice à tester
-     *//*
-
+     */
     private static void testSetValeurCoordonneeCorrecte(Matrice aTester) {
 
         // jeu de données avec les coordonnées des coefficients à modifier
@@ -397,11 +364,9 @@ public class TestMatricePartie1 {
     }
 
 
-    */
-/**
+    /**
      * Test de la méthode setValeur
-     *//*
-
+     */
     public static void testSetValeur() {
         Matrice aTester;                // matrice à tester
 
@@ -419,8 +384,7 @@ public class TestMatricePartie1 {
     }
 
 
-    */
-/**
+    /**
      * Détermine si une paire (a, b) est présente dans un tableau à 2 dimensions
      * contenant des paires
      * @param table tableau à 2 dimensions avec 2 colonnes
@@ -429,8 +393,7 @@ public class TestMatricePartie1 {
      * @param b  deuxième valeur de la paire recherchée
      * @return un entier égal l'indice de la ligne du tableau table qui contient
      *         la paire (a, b) ou -1 si la paire n'est pas trouvée
-     *//*
-
+     */
     private static int positionDansTable(int[][] table, int a, int b) {
         int i;      // indice de parcours des lignes de table
         for (i = 0; i < table.length && (table[i][0] != a || table[i][1] != b); i++);
@@ -438,16 +401,14 @@ public class TestMatricePartie1 {
     }
 
 
-    */
-/**
+    /**
      * Initialise une matrice carrée de taille DIMENSION * DIMENSION
      * pour qu'elle contienne les valeurs définies dans la constante
      * A_INSERER. Les coordonnées sont spécifiées par le tableau
      * COORDONNEES.
      * @param aInitiliaser  matrice à initialiser (elle doit déjà être
      *                      créée à l'appel de la méthode)
-     *//*
-
+     */
     private static void initMatriceCarre(Matrice aInitialiser) {
         for(int i = 0; i < A_INSERER.length; i++) {
             aInitialiser.setValeur(COORDONNEES[i][0], COORDONNEES[i][1], A_INSERER[i]);
@@ -455,12 +416,10 @@ public class TestMatricePartie1 {
     }
 
 
-    */
-/**
+    /**
      * Programme principal permettant de lancer les procédures de test
      * @param args  argument non utilisé
-     *//*
-
+     */
     public static void main(String[] args) {
         System.out.println("TEST DES METHODES DE LA CLASSE MATRICE CREUSE\n\n");
         // testConstructeur();
@@ -470,4 +429,4 @@ public class TestMatricePartie1 {
 
     }
 
-}*/
+}
