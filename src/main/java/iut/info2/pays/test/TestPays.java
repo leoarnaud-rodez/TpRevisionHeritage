@@ -487,15 +487,15 @@ public class TestPays {
     public static void main(String[] args) {
         System.out.println("TESTS DE LA  CLASSE PAYS\n------------------------------\n\n");
 
-        // testConstructeur1ArgumentException();
-        // testConstructeur2ArgumentsException();
-        // testConstructeur1ArgumentToString();
-        // testConstructeur2ArgumentsToString();
-        // testAjouterVoisin();
-        // testAPourVoisin();
-        // testNombreVoisin();
-        // testAPourVoisinListePays();
-        // testNombreCommun();
+        testConstructeur1ArgumentException();
+        testConstructeur2ArgumentsException();
+        testConstructeur1ArgumentToString();
+        testConstructeur2ArgumentsToString();
+        testAjouterVoisin();
+        testAPourVoisin();
+        testNombreVoisin();
+        testAPourVoisinListePays();
+        testNombreCommun();
     }
 
 }
